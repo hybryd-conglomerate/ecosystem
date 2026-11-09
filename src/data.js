@@ -22,7 +22,7 @@ export const tech = [
   },
   {
     slug: 'atom',
-    name: 'Гибрид Атом [Li]',
+    name: 'Гибрид Атом [Si]',
     role: 'Автономное роботакси',
     img: 'atom-Si.png',
     hero: 'atom-Si.png',
