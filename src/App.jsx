@@ -15,35 +15,33 @@ function Top() {
 }
 
 export default function App() {
-  // Получаем текущий путь, чтобы менять цвет логотипа
   const { pathname } = useLocation();
 
   // Определяем цвет свечения в зависимости от раздела
   let glowClass = 'glow-white'; // Белый по умолчанию
 
   if (pathname.startsWith('/academy')) {
-    glowClass = 'glow-purple'; // Фиолетовый для Академии
+    glowClass = 'glow-purple'; 
   } else if (pathname.startsWith('/studio') || pathname.startsWith('/stream')) {
-    glowClass = 'glow-red';    // Красный для Студии
+    glowClass = 'glow-red';    
   } else if (pathname.startsWith('/aerospace') || pathname.startsWith('/space')) {
-    glowClass = 'glow-cyan';   // Бирюзовый для Аэрокосмических линий
+    glowClass = 'glow-cyan';   
   }
 
   return (
     <>
       <Top />
       <header className="hd">
-        {/* Обновленный логотип с анимацией */}
-        <Link to="/" className="logo flex items-center gap-3">
+        {/* Логотип */}
+        <Link to="/" className="logo">
           <img 
             src="/img/logo_hybrid.svg" 
             alt="Гибрид — конгломерат" 
             className={`logo-icon ${glowClass}`} 
           />
-          {/* Добавил текст, так как на вашем скриншоте он есть */}
-          <div className="flex flex-col text-left">
-            <span className="font-bold text-lg leading-none tracking-widest text-white uppercase" style={{fontFamily: "'Russo One', sans-serif"}}>Гибрид</span>
-            <span className="text-[9px] text-white/50 tracking-[0.3em] uppercase">Конгломерат</span>
+          <div className="logo-text">
+            <span className="logo-title">Гибрид</span>
+            <span className="logo-subtitle">Конгломерат</span>
           </div>
         </Link>
 
@@ -74,7 +72,7 @@ export default function App() {
       </main>
 
       <footer className="ft">
-        <img src="/img/logo_hybrid.svg" alt="Гибрид" className="logo-icon" />
+        <img src="/img/logo_hybrid.svg" alt="Гибрид" className={`logo-icon ${glowClass}`} />
         <nav>
           {nav.slice(1).map(([to, t]) => (
             <Link key={to} to={to}>{t}</Link>
