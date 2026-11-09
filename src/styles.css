@@ -46,8 +46,10 @@ h1,h2,h3{font-family:'Russo One',sans-serif;font-weight:400;line-height:1.1;marg
 
 /* Базовый стиль для иконки */
 .logo-icon {
-  height: 40px; /* Настройте высоту под ваш дизайн */
+  height: 40px;
   width: auto;
+  /* Делаем черный SVG белым */
+  filter: brightness(0) invert(1) drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
   transition: filter 0.4s ease, transform 0.4s ease;
 }
 
