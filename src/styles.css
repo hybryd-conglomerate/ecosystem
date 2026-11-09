@@ -13,7 +13,24 @@ h1,h2,h3{font-family:'Russo One',sans-serif;font-weight:400;line-height:1.1;marg
 .wrap{max-width:1280px;margin:0 auto;padding:48px 4vw}.row{display:flex;justify-content:space-between;align-items:baseline}.lead{color:var(--m);max-width:60ch}
 .grid5{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}.grid3{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
 .card,.panel{background:var(--panel);border:1px solid var(--line);padding:0 0 14px}.panel{padding:22px}.card h3,.card p{margin:12px 14px 0}.card p{color:var(--m);font-size:.85rem}
-.card:hover,a.panel:hover{border-color:var(--v2);box-shadow:0 0 20px #7c3aed44}.card img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.card:hover,a.panel:hover{border-color:var(--v2);box-shadow:0 0 20px #7c3aed44}
+
+/* =========================================
+   ИСПРАВЛЕННЫЕ СТИЛИ ДЛЯ КАРТИНОК В КАРТОЧКАХ
+   ========================================= */
+.card img {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Горизонтальный блок под широкие рендеры */
+  object-fit: contain; /* Картинка вписывается целиком, не обрезается */
+  background-color: #07070f; /* Темный фон по бокам */
+  padding: 10px; /* Отступы */
+  transition: transform 0.3s ease; /* Плавность для hover-эффекта */
+}
+
+.card:hover img {
+  transform: scale(1.05); /* Легкое увеличение при наведении */
+}
+
 .two{display:grid;grid-template-columns:1fr 1.3fr;gap:40px;align-items:center}.big{width:100%;border:1px solid var(--line)}.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
 .thumbs{display:flex;gap:12px;overflow-x:auto;margin:24px 0}.thumbs button{background:var(--panel);border:1px solid var(--line);padding:0;color:var(--m);cursor:pointer;min-width:150px}.thumbs button.on{border-color:var(--v2);color:#fff}.thumbs span{display:block;padding:6px;font-size:.75rem}
 .specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}.specs h3{grid-column:1/-1;background:var(--panel);margin:0;padding:14px}.specs div{background:var(--panel);padding:14px}.specs small{display:block;color:var(--m)}
