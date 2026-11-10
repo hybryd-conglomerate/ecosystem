@@ -5,6 +5,7 @@ import Home from './pages/Home.jsx';
 import { TechList, TechDetail } from './pages/Tech.jsx';
 import { Technologies, Projects, Company, Docs, Cabinet, NotFound } from './pages/Info.jsx';
 import Academy from './pages/Academy.jsx';
+import Aerospace from './pages/Aerospace.jsx';
 
 function MotionSystem() {
   const { pathname } = useLocation();
@@ -31,13 +32,25 @@ function MotionSystem() {
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
+  const path = location.pathname;
 
   useEffect(() => setMenuOpen(false), [location.pathname]);
+
+  // Определяем цвет свечения логотипа
+  let glowClass = 'glow-white'; 
+
+  if (path.startsWith('/academy')) {
+    glowClass = 'glow-purple'; 
+  } else if (path.startsWith('/studio') || path.startsWith('/stream')) {
+    glowClass = 'glow-red';    
+  } else if (path.startsWith('/aerospace') || path.startsWith('/space')) {
+    glowClass = 'glow-cyan';   
+  }
 
   return (
     <header className="site-header">
       <Link to="/" className="brand" aria-label="Гибрид — главная">
-        <img src="/img/logo_hybrid.svg" alt="" />
+        <img src="/img/logo_hybrid.svg" alt="" className={`logo-icon ${glowClass}`} />
         <span className="brand-copy">
           <strong>ГИБРИД</strong>
           <small>КОНГЛОМЕРАТ</small>
@@ -73,7 +86,7 @@ function Footer() {
     <footer className="site-footer">
       <div className="footer-top">
         <Link to="/" className="brand">
-          <img src="/img/logo_hybrid.svg" alt="" />
+          <img src="/img/logo_hybrid.svg" alt="" className="logo-icon" />
           <span className="brand-copy"><strong>ГИБРИД</strong><small>КОНГЛОМЕРАТ</small></span>
         </Link>
         <p>Инженерия движения.<br />Технологии нового поколения.</p>
@@ -100,6 +113,7 @@ export default function App() {
           <Route path="/tech" element={<TechList />} />
           <Route path="/tech/:slug" element={<TechDetail />} />
           <Route path="/technologies" element={<Technologies />} />
+          <Route path="/aerospace" element={<Aerospace />} /> {/* НОВЫЙ МАРШРУТ */}
           <Route path="/projects" element={<Projects />} />
           <Route path="/company" element={<Company />} />
           <Route path="/academy" element={<Academy />} />
