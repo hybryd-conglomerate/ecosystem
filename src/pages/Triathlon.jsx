@@ -2,25 +2,27 @@
 
 
 
+
+
 import { Link } from 'react-router-dom';
 
 const stages = [
   {
     num: '01',
     title: 'ПЛАВАНИЕ / SWIM',
-    desc: 'Подготовка в бассейне. Отработка техники дыхания, гребка и выносливости для прохождения открытой воды.',
+    desc: 'Подготовка в бассейне. Отработка техники дыхания, гребка и выносливости для уверенного прохождения открытой воды.',
     icon: '🌊'
   },
   {
     num: '02',
     title: 'ВЕЛОСИПЕД / BIKE',
-    desc: 'Тренировки на профессиональных велотренажерах. Работа над каденсом, силой ног и правильной посадкой.',
+    desc: 'Тренировки на профессиональных велотренажерах. Работа над каденсом, силой ног и аэродинамичной посадкой.',
     icon: '🚴'
   },
   {
     num: '03',
     title: 'БЕГ / RUN',
-    desc: 'Беговые дорожки для отработки ритма и темпа. Финальный этап, требующий максимальной физической отдачи.',
+    desc: 'Беговые дорожки для отработки ритма и темпа. Финальный этап, требующий максимальной физической отдачи и ментальной стойкости.',
     icon: '🏃'
   }
 ];
@@ -33,10 +35,13 @@ export default function Triathlon() {
         <div className="hero-backdrop" />
         <div className="hero-grid" />
         <div className="hero-content" data-reveal>
-          <p className="eyebrow"><span className="status-dot" style={{ background: '#FF2A2A', boxShadow: '0 0 16px #FF2A2A' }} /> НАПРАВЛЕНИЕ / TRIATHLON</p>
-          <h1>КИБЕР-<br /><em style={{ color: '#FF2A2A' }}>ТРИАТЛОН.</em></h1>
+          <p className="eyebrow">
+            <span className="status-dot" style={{ background: '#FF2A2A', boxShadow: '0 0 16px #FF2A2A' }} /> 
+            НАПРАВЛЕНИЕ / ЖЕНСКАЯ КОМАНДА
+          </p>
+          <h1>ГИБРИД<br /><em style={{ color: '#FF2A2A' }}>ТРИАТЛОН.</em></h1>
           <p className="hero-lead">
-            Слияние физической выносливости и киберспортивных навыков. Три этапа реальной подготовки, где решают не только мышцы, но и реакция, тактика и сила духа.
+            Женская команда по триатлону. Слияние физической выносливости, дисциплины и технологичного подхода к тренировкам. Три этапа, где решают сила духа, тактика и командная поддержка.
           </p>
           <div className="hero-actions">
             <a className="button button-primary" href="#stages" style={{ background: '#FF2A2A', borderColor: '#FF2A2A', color: '#08090d' }}>
@@ -51,7 +56,7 @@ export default function Triathlon() {
         <div className="page-heading" data-reveal>
           <span className="section-kicker" style={{ borderColor: 'rgba(255, 42, 42, 0.2)' }}>01 / ДИСЦИПЛИНЫ</span>
           <h1>ТРИ ЭТАПА <em style={{ color: '#FF2A2A' }}>ПОДГОТОВКИ.</em></h1>
-          <p>Каждый этап требует переключения между физической нагрузкой и восстановлением.</p>
+          <p>Каждый этап требует переключения между физической нагрузкой, восстановлением и командной работой.</p>
         </div>
 
         <div className="catalog-grid">
@@ -74,10 +79,10 @@ export default function Triathlon() {
       {/* CTA */}
       <section className="closing-cta">
         <div data-reveal>
-          <span className="section-kicker">HYBRID / TRIATHLON</span>
-          <h2>ГОТОВ <em style={{ color: '#FF2A2A' }}>ПРОВЕРИТЬ СЕБЯ?</em></h2>
+          <span className="section-kicker">HYBRID / WOMEN'S TEAM</span>
+          <h2>СТАНЬ ЧАСТЬЮ <em style={{ color: '#FF2A2A' }}>КОМАНДЫ.</em></h2>
           <p style={{ color: 'var(--muted)', marginBottom: '30px', maxWidth: '500px' }}>
-            Запишитесь на пробную тренировку в нашем кибер-отеле. Инструкторы помогут составить план подготовки и проведут инструктаж по работе с оборудованием.
+            Запишитесь на пробную тренировку в нашем кибер-отеле. Инструкторы помогут составить индивидуальный план подготовки и проведут инструктаж по работе с оборудованием.
           </p>
           <a 
             href="https://www.xn----8sbbqapnmkqvgnh6m.xn--p1ai/" 
