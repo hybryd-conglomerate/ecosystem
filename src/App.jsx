@@ -1,62 +1,100 @@
 import { Routes, Route, NavLink, Link, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { nav } from './data.js';
 import Home from './pages/Home.jsx';
 import { TechList, TechDetail } from './pages/Tech.jsx';
 import { Technologies, Projects, Company, Docs, Cabinet, NotFound } from './pages/Info.jsx';
 import Academy from './pages/Academy.jsx';
 
-function Top() {
+function MotionSystem() {
   const { pathname } = useLocation();
+
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    const nodes = document.querySelectorAll('[data-reveal]');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    nodes.forEach((node) => observer.observe(node));
+    return () => observer.disconnect();
   }, [pathname]);
+
   return null;
 }
 
-export default function App() {
-  const { pathname } = useLocation();
+function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
 
-  // Определяем цвет свечения в зависимости от раздела
-  let glowClass = 'glow-white'; // Белый по умолчанию
-
-  if (pathname.startsWith('/academy')) {
-    glowClass = 'glow-purple'; 
-  } else if (pathname.startsWith('/studio') || pathname.startsWith('/stream')) {
-    glowClass = 'glow-red';    
-  } else if (pathname.startsWith('/aerospace') || pathname.startsWith('/space')) {
-    glowClass = 'glow-cyan';   
-  }
+  useEffect(() => setMenuOpen(false), [location.pathname]);
 
   return (
-    <>
-      <Top />
-      <header className="hd">
-        {/* Логотип */}
-        <Link to="/" className="logo">
-          <img 
-            src="/img/logo_hybrid.svg" 
-            alt="Гибрид — конгломерат" 
-            className={`logo-icon ${glowClass}`} 
-          />
-          <div className="logo-text">
-            <span className="logo-title">Гибрид</span>
-            <span className="logo-subtitle">Конгломерат</span>
-          </div>
+    <header className="site-header">
+      <Link to="/" className="brand" aria-label="Гибрид — главная">
+        <img src="/img/logo_hybrid.svg" alt="" />
+        <span className="brand-copy">
+          <strong>ГИБРИД</strong>
+          <small>КОНГЛОМЕРАТ</small>
+        </span>
+      </Link>
+
+      <button
+        className={`menu-toggle ${menuOpen ? 'is-open' : ''}`}
+        aria-label={menuOpen ? 'Закрыть меню' : 'Открыть меню'}
+        aria-expanded={menuOpen}
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        <span /><span />
+      </button>
+
+      <nav className={`main-nav ${menuOpen ? 'is-open' : ''}`}>
+        {nav.map(([to, label]) => (
+          <NavLink key={to} to={to} end={to === '/'}>
+            {label}
+          </NavLink>
+        ))}
+      </nav>
+
+      <Link className="header-action" to="/cabinet">
+        <span>Личный кабинет</span><i>↗</i>
+      </Link>
+    </header>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="site-footer">
+      <div className="footer-top">
+        <Link to="/" className="brand">
+          <img src="/img/logo_hybrid.svg" alt="" />
+          <span className="brand-copy"><strong>ГИБРИД</strong><small>КОНГЛОМЕРАТ</small></span>
         </Link>
+        <p>Инженерия движения.<br />Технологии нового поколения.</p>
+        <div className="footer-links">
+          {nav.slice(1).map(([to, label]) => <Link key={to} to={to}>{label}</Link>)}
+        </div>
+      </div>
+      <div className="footer-bottom">
+        <span>© {new Date().getFullYear()} КОНГЛОМЕРАТ ГИБРИД</span>
+        <span>СОЗДАЁМ ТО, ЧЕГО ЕЩЁ НЕ СУЩЕСТВУЕТ</span>
+      </div>
+    </footer>
+  );
+}
 
-        <nav>
-          {nav.map(([to, t]) => (
-            <NavLink key={to} to={to} end={to === '/'}>
-              {t}
-            </NavLink>
-          ))}
-        </nav>
-        
-        <Link className="btn" to="/cabinet">Личный кабинет</Link>
-      </header>
-
-      <main>
+export default function App() {
+  return (
+    <>
+      <MotionSystem />
+      <Header />
+      <main className="page-shell">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/tech" element={<TechList />} />
@@ -70,16 +108,7 @@ export default function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
-
-      <footer className="ft">
-        <img src="/img/logo_hybrid.svg" alt="Гибрид" className={`logo-icon ${glowClass}`} />
-        <nav>
-          {nav.slice(1).map(([to, t]) => (
-            <Link key={to} to={to}>{t}</Link>
-          ))}
-        </nav>
-        <p>© 2026 Конгломерат Гибрид. Все права защищены.</p>
-      </footer>
+      <Footer />
     </>
   );
 }
