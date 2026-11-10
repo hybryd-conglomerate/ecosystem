@@ -6,6 +6,7 @@ export const nav = [
   ['/projects', 'Проекты'],
   ['/company', 'Компания'],
   ['/academy', 'Academy'],
+  ['/triathlon', 'Триатлон'],
   ['/docs', 'Документация'],
   
 ];
