@@ -4,7 +4,6 @@ export const nav = [
   ['/technologies', 'Технологии'],
    ['/aerospace', 'Аэрокосмические линии'],
   ['/projects', 'Проекты'],
-  ['/company', 'Компания'],
   ['/academy', 'Academy'],
   ['/triathlon', 'Триатлон'],
   ['/docs', 'Документация'],
