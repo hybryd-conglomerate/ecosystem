@@ -38,7 +38,18 @@ em { color: var(--violet); font-style: normal; }
 /* Header */
 .site-header { height: 82px; padding: 0 5vw; display: flex; align-items: center; gap: 42px; position: sticky; top: 0; z-index: 50; background: rgba(8,9,13,.78); border-bottom: 1px solid rgba(255,255,255,.08); backdrop-filter: blur(22px); }
 .brand { display: inline-flex; align-items: center; gap: 12px; flex-shrink: 0; }
-.brand img { width: 38px; height: 38px; object-fit: contain; filter: drop-shadow(0 0 12px rgba(167,139,250,.22)); }
+.brand img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transition: filter .3s ease, transform .3s ease;
+}
+
+.brand:hover img {
+  transform: scale(1.06);
+  filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(255,255,255,.25));
+}
 .brand-copy { display: flex; flex-direction: column; gap: 3px; line-height: 1; }
 .brand-copy strong { font: 600 15px 'Unbounded', sans-serif; letter-spacing: .12em; }
 .brand-copy small { color: var(--muted); font-size: 8px; letter-spacing: .34em; }
