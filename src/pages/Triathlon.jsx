@@ -4,6 +4,7 @@
 
 
 import { Link } from 'react-router-dom';
+import Triathlon from './pages/Triathlon.jsx';
 
 const stages = [
   {
