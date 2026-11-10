@@ -6,6 +6,7 @@ import { TechList, TechDetail } from './pages/Tech.jsx';
 import { Technologies, Projects, Company, Docs, Cabinet, NotFound } from './pages/Info.jsx';
 import Academy from './pages/Academy.jsx';
 import Aerospace from './pages/Aerospace.jsx';
+import Triathlon from './pages/Triathlon.jsx'; // <--- ДОБАВЛЕН ИМПОРТ
 
 function MotionSystem() {
   const { pathname } = useLocation();
@@ -45,6 +46,8 @@ function Header() {
     glowClass = 'glow-red';    
   } else if (path.startsWith('/aerospace') || path.startsWith('/space')) {
     glowClass = 'glow-cyan';   
+  } else if (path.startsWith('/triathlon')) {
+    glowClass = 'glow-red';    // <--- ДОБАВЛЕНО УСЛОВИЕ ДЛЯ ТРИАТЛОНА
   }
 
   return (
@@ -113,7 +116,13 @@ export default function App() {
           <Route path="/tech" element={<TechList />} />
           <Route path="/tech/:slug" element={<TechDetail />} />
           <Route path="/technologies" element={<Technologies />} />
-          <Route path="/aerospace" element={<Aerospace />} /> {/* НОВЫЙ МАРШРУТ */}
+          
+          {/* Аэрокосмические линии */}
+          <Route path="/aerospace" element={<Aerospace />} />
+          
+          {/* Триатлон */}
+          <Route path="/triathlon" element={<Triathlon />} /> {/* <--- ДОБАВЛЕН МАРШРУТ */}
+          
           <Route path="/projects" element={<Projects />} />
           <Route path="/company" element={<Company />} />
           <Route path="/academy" element={<Academy />} />
