@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 import { Link } from 'react-router-dom';
 
 const stages = [
@@ -82,9 +75,15 @@ export default function Triathlon() {
           <p style={{ color: 'var(--muted)', marginBottom: '30px', maxWidth: '500px' }}>
             Запишитесь на пробное прохождение трассы в нашем кибер-отеле. Инструкторы помогут настроить оборудование и проведут инструктаж.
           </p>
-          <Link className="button button-primary" to="/academy" style={{ background: '#FF2A2A', borderColor: '#FF2A2A', color: '#08090d' }}>
-            Перейти в Академию <span>↗</span>
-          </Link>
+          <a 
+            href="https://www.xn----8sbbqapnmkqvgnh6m.xn--p1ai/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="button button-primary" 
+            style={{ background: '#FF2A2A', borderColor: '#FF2A2A', color: '#08090d' }}
+          >
+            Перейти в киберотель <span>↗</span>
+          </a>
         </div>
       </section>
     </div>
