@@ -1,3 +1,11 @@
+
+
+
+
+
+
+
+
 import { Routes, Route, NavLink, Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { nav } from './data.js';
