@@ -2,10 +2,12 @@ export const nav = [
   ['/', 'Главная'],
   ['/tech', 'Техника'],
   ['/technologies', 'Технологии'],
+   ['/aerospace', 'Аэрокосмические линии'],
   ['/projects', 'Проекты'],
   ['/company', 'Компания'],
   ['/academy', 'Academy'],
   ['/docs', 'Документация'],
+  
 ];
 
 export const tech = [
