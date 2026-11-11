@@ -7,9 +7,6 @@
 
 
 
-
-
-
 import { Link } from 'react-router-dom';
 
 const disciplines = [
@@ -78,10 +75,28 @@ export default function Academy() {
         </div>
       </section>
 
+      {/* --- КАРТОЧКА HYBRID RELAY --- */}
+      <section className="section-pad" style={{ paddingTop: 0 }}>
+        <Link to="/relay" className="relay-feature-card" data-reveal>
+          <div className="relay-feature-visual">
+            <span className="relay-live-indicator">BROADCAST STUDIO</span>
+            <div className="relay-visual-orbit"><span>R</span></div>
+            <div className="relay-visual-lines" />
+          </div>
+          <div className="relay-feature-copy">
+            <span className="section-kicker">04 / MEDIA PRODUCTION</span>
+            <h2>HYBRID <em>RELAY.</em></h2>
+            <p>Студия производства и трансляции киберспортивных событий. Прямые эфиры, турнирные трансляции, аналитические программы и видеопроизводство.</p>
+            <span className="relay-feature-link">ИССЛЕДОВАТЬ СТУДИЮ ↗</span>
+          </div>
+        </Link>
+      </section>
+      {/* --- КОНЕЦ КАРТОЧКИ RELAY --- */}
+
       {/* --- СЕКЦИЯ МЕРЧА АКАДЕМИИ --- */}
       <section className="section-pad" style={{ background: '#0b0c12' }}>
         <div className="section-kicker">
-          <span>04 / TEAM MERCH</span>
+          <span>05 / TEAM MERCH</span>
           <span>HYBRID ACADEMY / UNIFORM</span>
         </div>
 
