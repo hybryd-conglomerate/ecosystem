@@ -15,6 +15,7 @@ import { Technologies, Projects, Company, Docs, Cabinet, NotFound } from './page
 import Academy from './pages/Academy.jsx';
 import Aerospace from './pages/Aerospace.jsx';
 import Triathlon from './pages/Triathlon.jsx'; // <--- ДОБАВЛЕН ИМПОРТ
+import EsportsDiscipline from './pages/EsportsDiscipline.jsx';
 
 function MotionSystem() {
   const { pathname } = useLocation();
@@ -124,6 +125,10 @@ export default function App() {
           <Route path="/tech" element={<TechList />} />
           <Route path="/tech/:slug" element={<TechDetail />} />
           <Route path="/technologies" element={<Technologies />} />
+          <Route
+  path="/academy/:disciplineSlug"
+  element={<EsportsDiscipline />}
+/>
           
           {/* Аэрокосмические линии */}
           <Route path="/aerospace" element={<Aerospace />} />
