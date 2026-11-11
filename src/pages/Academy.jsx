@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 import { Link } from 'react-router-dom';
 
 const disciplines = [
@@ -66,23 +73,61 @@ export default function Academy() {
         </div>
       </section>
 
-      {/* --- НОВАЯ КАРТОЧКА HYBRID RELAY --- */}
-      <section className="section-pad" style={{ paddingTop: 0 }}>
-        <Link to="/relay" className="relay-feature-card" data-reveal>
-          <div className="relay-feature-visual">
-            <span className="relay-live-indicator">BROADCAST STUDIO</span>
-            <div className="relay-visual-orbit"><span>R</span></div>
-            <div className="relay-visual-lines" />
+      {/* --- НОВАЯ СЕКЦИЯ: МЕРЧ АКАДЕМИИ --- */}
+      <section className="section-pad" style={{ background: '#0b0c12' }}>
+        <div className="section-kicker">
+          <span>04 / TEAM MERCH</span>
+          <span>HYBRID ACADEMY / UNIFORM</span>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', alignItems: 'center', marginTop: '40px' }}>
+          
+          {/* Картинка куртки */}
+          <div data-reveal style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
+            <img 
+              src="/img/merch-coat.png" // <--- ТЕПЕРЬ .PNG
+              alt="Hybrid Academy Tech Coat" 
+              style={{ 
+                width: '100%', 
+                maxWidth: '600px', 
+                objectFit: 'contain',
+                filter: 'drop-shadow(0 0 30px rgba(167, 139, 250, 0.2))' 
+              }} 
+            />
           </div>
-          <div className="relay-feature-copy">
-            <span className="section-kicker">04 / MEDIA PRODUCTION</span>
-            <h2>HYBRID <em>RELAY.</em></h2>
-            <p>Студия производства и трансляции киберспортивных событий. Прямые эфиры, турнирные трансляции, аналитические программы и видеопроизводство.</p>
-            <span className="relay-feature-link">ИССЛЕДОВАТЬ СТУДИЮ ↗</span>
+
+          {/* Текстовая часть */}
+          <div data-reveal>
+            <h2 style={{ fontSize: 'clamp(2rem, 3vw, 3rem)', marginBottom: '20px' }}>
+              ЭКИПИРОВКА <em style={{ color: 'var(--violet)' }}>АКАДЕМИИ.</em>
+            </h2>
+            <p style={{ color: 'var(--muted)', fontSize: '15px', lineHeight: '1.8', marginBottom: '25px' }}>
+              Техническая куртка-плащ для киберспортсменов HYBRID ACADEMY. 
+              Разработана с учетом требований к тренировкам и соревнованиям: влагоотталкивающая ткань, светоотражающие элементы и модульная конструкция.
+            </p>
+            
+            <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 30px 0', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#d1d5db' }}>
+                <span style={{ color: 'var(--violet)', fontSize: '18px', fontWeight: 'bold' }}>✓</span> Водоотталкивающая мембранная ткань
+              </li>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#d1d5db' }}>
+                <span style={{ color: 'var(--violet)', fontSize: '18px', fontWeight: 'bold' }}>✓</span> Светоотражающие элементы
+              </li>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#d1d5db' }}>
+                <span style={{ color: 'var(--violet)', fontSize: '18px', fontWeight: 'bold' }}>✓</span> Съемные рукава и капюшон
+              </li>
+            </ul>
+
+            <button 
+              className="button button-primary" 
+              style={{ background: 'var(--violet)', borderColor: 'var(--violet)', color: '#08090d' }}
+            >
+              Заказать экипировку ↗
+            </button>
           </div>
-        </Link>
+        </div>
       </section>
-      {/* --- КОНЕЦ НОВОЙ КАРТОЧКИ --- */}
+      {/* --- КОНЕЦ СЕКЦИИ МЕРЧА --- */}
 
       <section className="academy-join section-pad" id="join">
         <span className="section-kicker">HYBRID / JOIN THE TEAM</span>
