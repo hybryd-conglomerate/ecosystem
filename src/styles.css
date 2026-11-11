@@ -45,7 +45,6 @@ em { color: var(--violet); font-style: normal; }
   filter: brightness(0) invert(1);
   transition: filter .3s ease, transform .3s ease;
 }
-
 .brand:hover img {
   transform: scale(1.06);
   filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(255,255,255,.25));
@@ -846,3 +845,420 @@ em { color: var(--violet); font-style: normal; }
   }
 }
 
+/* =========================================
+   HYBRID RELAY — BROADCAST STUDIO
+========================================= */
+
+.relay-feature-card {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  min-height: 310px;
+  margin-top: 22px;
+  overflow: hidden;
+  color: var(--white);
+  text-decoration: none;
+  background: #0b0b12;
+  border: 1px solid rgba(167,139,250,.22);
+  transition: border .3s, transform .3s;
+}
+
+.relay-feature-card:hover {
+  border-color: rgba(167,139,250,.65);
+  transform: translateY(-4px);
+}
+
+.relay-feature-visual {
+  position: relative;
+  min-height: 310px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 50%, rgba(102,57,180,.38), transparent 55%), linear-gradient(135deg, #151321, #08090e);
+}
+
+.relay-live-indicator {
+  position: absolute;
+  top: 24px;
+  left: 25px;
+  color: #b9a2ff;
+  font-size: 9px;
+  letter-spacing: .2em;
+}
+
+.relay-visual-orbit {
+  width: 170px;
+  height: 170px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(167,139,250,.55);
+  border-radius: 50%;
+  box-shadow: 0 0 40px rgba(130,80,220,.16), inset 0 0 40px rgba(130,80,220,.12);
+}
+
+.relay-visual-orbit span {
+  color: #c7b5ff;
+  font: 500 100px 'Unbounded',sans-serif;
+  text-shadow: 0 0 35px rgba(167,139,250,.7);
+}
+
+.relay-visual-lines {
+  position: absolute;
+  inset: 0;
+  opacity: .2;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(167,139,250,.15) 1px, transparent 1px), linear-gradient(90deg, rgba(167,139,250,.15) 1px, transparent 1px);
+  background-size: 38px 38px;
+  mask-image: linear-gradient(transparent, #000);
+}
+
+.relay-feature-copy {
+  padding: 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.relay-feature-copy h2 {
+  margin: 25px 0 15px;
+  font: 500 clamp(25px,4vw,42px) 'Unbounded',sans-serif;
+}
+
+.relay-feature-copy h2 em,
+.relay-page em {
+  color: #b49aff;
+  font-style: normal;
+}
+
+.relay-feature-copy p {
+  max-width: 500px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.relay-feature-link {
+  margin-top: 25px;
+  color: #c1aaff;
+  font-size: 9px;
+  letter-spacing: .16em;
+}
+
+.relay-page {
+  background: var(--bg);
+}
+
+.relay-hero {
+  position: relative;
+  min-height: 690px;
+  padding: 90px 9vw;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 78% 45%, rgba(104,63,185,.22), transparent 42%), #090a10;
+}
+
+.relay-hero-grid {
+  position: absolute;
+  inset: 0;
+  opacity: .13;
+  background-image: linear-gradient(rgba(167,139,250,.2) 1px, transparent 1px), linear-gradient(90deg, rgba(167,139,250,.2) 1px, transparent 1px);
+  background-size: 65px 65px;
+  mask-image: linear-gradient(90deg, transparent, #000);
+}
+
+.relay-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 750px;
+}
+
+.relay-back {
+  display: block;
+  margin-bottom: 65px;
+  color: #b49aff;
+  font-size: 9px;
+  letter-spacing: .16em;
+}
+
+.relay-hero h1 {
+  margin: 35px 0 25px;
+  font: 500 clamp(65px,11vw,145px)/.95 'Unbounded',sans-serif;
+  letter-spacing: -.08em;
+}
+
+.relay-hero-content p {
+  max-width: 520px;
+  color: #b5b5c1;
+  line-height: 1.9;
+  font-size: 13px;
+  margin-bottom: 32px;
+}
+
+.relay-hero-mark {
+  position: absolute;
+  right: 12%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 300px;
+  height: 300px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(167,139,250,.25);
+  border-radius: 50%;
+  box-shadow: 0 0 100px rgba(120,75,200,.13), inset 0 0 80px rgba(120,75,200,.12);
+}
+
+.relay-hero-mark span {
+  color: rgba(193,170,255,.8);
+  font: 500 210px 'Unbounded',sans-serif;
+}
+
+.relay-hero-mark small {
+  position: absolute;
+  bottom: 35px;
+  color: #8d7ab7;
+  font-size: 8px;
+  letter-spacing: .2em;
+}
+
+.relay-hero-footer {
+  position: absolute;
+  left: 9vw;
+  right: 9vw;
+  bottom: 28px;
+  display: flex;
+  justify-content: space-between;
+  color: #777887;
+  font-size: 8px;
+  letter-spacing: .16em;
+}
+
+.relay-section {
+  border-bottom: 1px solid var(--line);
+}
+
+.relay-format-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 14px;
+  margin-top: 40px;
+}
+
+.relay-format {
+  position: relative;
+  min-height: 200px;
+  padding: 30px;
+  background: #101218;
+  border: 1px solid var(--line);
+  transition: border .3s, transform .3s;
+}
+
+.relay-format:hover {
+  border-color: rgba(167,139,250,.55);
+  transform: translateY(-3px);
+}
+
+.relay-format > span {
+  color: #b49aff;
+  font-size: 10px;
+}
+
+.relay-format h2 {
+  margin: 32px 0 12px;
+  font: 500 16px 'Unbounded',sans-serif;
+}
+
+.relay-format p {
+  max-width: 430px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.relay-format i {
+  position: absolute;
+  right: 25px;
+  bottom: 25px;
+  color: #b49aff;
+  font-style: normal;
+}
+
+.relay-studio-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 510px;
+  background: #0d0e15;
+}
+
+.relay-studio-visual {
+  display: grid;
+  place-items: center;
+  padding: 60px;
+  background: radial-gradient(ellipse, rgba(100,65,180,.25), transparent 65%), #090a10;
+}
+
+.relay-studio-screen {
+  width: min(100%,440px);
+  aspect-ratio: 16/10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  background: linear-gradient(145deg, rgba(167,139,250,.1), transparent), #08090d;
+  border: 1px solid rgba(167,139,250,.4);
+  box-shadow: 0 0 65px rgba(120,75,200,.13);
+}
+
+.relay-studio-screen span {
+  color: #aaa0c7;
+  font-size: 10px;
+  letter-spacing: .3em;
+}
+
+.relay-studio-screen strong {
+  color: #c0aaff;
+  font: 500 clamp(30px,5vw,55px) 'Unbounded',sans-serif;
+  text-shadow: 0 0 30px rgba(167,139,250,.5);
+}
+
+.relay-studio-screen i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #a78bfa;
+  box-shadow: 0 0 15px #a78bfa;
+}
+
+.relay-studio-copy {
+  padding: 80px 9vw 80px 5vw;
+  align-self: center;
+}
+
+.relay-studio-copy h2,
+.relay-archive h2,
+.relay-contact h2 {
+  margin: 35px 0 25px;
+  font: 500 clamp(32px,5vw,58px)/1.2 'Unbounded',sans-serif;
+}
+
+.relay-studio-copy p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.relay-capabilities {
+  margin-top: 35px;
+}
+
+.relay-capabilities > div {
+  display: grid;
+  grid-template-columns: 50px 1fr 25px;
+  gap: 20px;
+  align-items: center;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.relay-capabilities span {
+  color: #b49aff;
+  font-size: 10px;
+}
+
+.relay-capabilities strong {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.relay-capabilities i {
+  color: #b49aff;
+  font-style: normal;
+}
+
+.relay-archive {
+  background: radial-gradient(ellipse at 80% 50%, rgba(105,70,180,.13), transparent 45%), #0b0c12;
+}
+
+.relay-archive h2 {
+  margin-top: 45px;
+}
+
+.relay-archive-placeholder {
+  max-width: 700px;
+  margin-top: 40px;
+  padding: 35px;
+  border: 1px dashed rgba(167,139,250,.35);
+  background: rgba(16,18,24,.7);
+}
+
+.relay-archive-placeholder span {
+  color: #b49aff;
+  font-size: 9px;
+  letter-spacing: .16em;
+}
+
+.relay-archive-placeholder p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.relay-contact {
+  padding: 100px 9vw;
+  background: #08090d;
+}
+
+.relay-contact p {
+  color: var(--muted);
+  margin-bottom: 30px;
+}
+
+@media (max-width: 800px) {
+  .relay-feature-card,
+  .relay-studio-section {
+    grid-template-columns: 1fr;
+  }
+  .relay-feature-visual {
+    min-height: 250px;
+  }
+  .relay-hero-mark {
+    right: -120px;
+    opacity: .35;
+  }
+  .relay-studio-copy {
+    padding: 60px 7vw;
+  }
+}
+
+@media (max-width: 520px) {
+  .relay-format-grid {
+    grid-template-columns: 1fr;
+  }
+  .relay-feature-copy {
+    padding: 30px;
+  }
+  .relay-hero {
+    min-height: 650px;
+    padding: 70px 7vw;
+  }
+  .relay-hero-footer {
+    left: 7vw;
+    right: 7vw;
+    font-size: 7px;
+  }
+  .relay-hero-mark {
+    width: 220px;
+    height: 220px;
+  }
+  .relay-hero-mark span {
+    font-size: 150px;
+  }
+  .relay-studio-visual {
+    padding: 35px 7vw;
+  }
+  .relay-capabilities > div {
+    grid-template-columns: 35px 1fr 20px;
+    gap: 12px;
+  }
+}
