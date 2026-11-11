@@ -3,6 +3,8 @@
 
 
 
+
+
 import { Link } from 'react-router-dom';
 
 const formats = [
@@ -85,8 +87,63 @@ export default function Relay() {
         </div>
       </section>
 
+      {/* --- НОВАЯ СЕКЦИЯ: МЕРЧ С ФУТБОЛКОЙ --- */}
+      <section className="section-pad relay-section" style={{ background: '#0b0c12' }}>
+        <div className="section-kicker">
+          <span>04 / TEAM MERCH</span>
+          <span>HYBRID RELAY / GEAR</span>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', alignItems: 'center', marginTop: '40px' }}>
+          {/* Картинка футболки */}
+          <div data-reveal style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
+            <img 
+              src="/img/merch-tshirt.png" 
+              alt="Hybrid Relay Jersey" 
+              style={{ 
+                width: '100%', 
+                maxWidth: '500px', 
+                objectFit: 'contain',
+                filter: 'drop-shadow(0 0 40px rgba(255, 42, 42, 0.2))' 
+              }} 
+            />
+          </div>
+
+          {/* Текстовая часть */}
+          <div data-reveal>
+            <h2 style={{ fontSize: 'clamp(2rem, 3vw, 3rem)', marginBottom: '20px' }}>
+              ОФИЦИАЛЬНЫЙ <em style={{ color: '#ff2a2a' }}>МЕРЧ.</em>
+            </h2>
+            <p style={{ color: 'var(--muted)', fontSize: '15px', lineHeight: '1.8', marginBottom: '25px' }}>
+              Экипировка команды HYBRID RELAY. Дизайн разработан специально для киберспортивных трансляций и турниров Академии. 
+              Отражает агрессивный стиль и технологичность конгломерата.
+            </p>
+            
+            <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 30px 0', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#d1d5db' }}>
+                <span style={{ color: '#ff2a2a', fontSize: '18px' }}>✓</span> Дышащая ткань премиум-класса
+              </li>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#d1d5db' }}>
+                <span style={{ color: '#ff2a2a', fontSize: '18px' }}>✓</span> Светоотражающие элементы
+              </li>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#d1d5db' }}>
+                <span style={{ color: '#ff2a2a', fontSize: '18px' }}>✓</span> Ограниченная серия для участников
+              </li>
+            </ul>
+
+            <button 
+              className="button button-primary" 
+              style={{ background: '#ff2a2a', borderColor: '#ff2a2a', color: '#08090d' }}
+            >
+              Заказать экипировку ↗
+            </button>
+          </div>
+        </div>
+      </section>
+      {/* --- КОНЕЦ СЕКЦИИ МЕРЧА --- */}
+
       <section className="section-pad relay-archive">
-        <div className="section-kicker"><span>04 / BROADCAST ARCHIVE</span><span>MEDIA LIBRARY</span></div>
+        <div className="section-kicker"><span>05 / BROADCAST ARCHIVE</span><span>MEDIA LIBRARY</span></div>
         <h2>ИСТОРИЯ<br /><em>ЭФИРОВ.</em></h2>
         <div className="relay-archive-placeholder">
           <span>ARCHIVE / COMING LATER</span>
