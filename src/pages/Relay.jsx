@@ -1,9 +1,3 @@
-
-
-
-
-
-
 import { Link } from 'react-router-dom';
 
 const formats = [
@@ -58,7 +52,7 @@ export default function Relay() {
         </div>
       </section>
 
-      {/* --- ГАЛЕРЕЯ СТУДИИ (ИСПОЛЬЗУЕМ ВАШИ КАРТИНКИ) --- */}
+      {/* --- ГАЛЕРЕЯ СТУДИИ (ИСПРАВЛЕНО ИНЛАЙН) --- */}
       <section className="relay-studio-section">
         <div className="relay-studio-copy">
           <span className="section-kicker">02 / PRODUCTION ENVIRONMENT</span>
@@ -84,29 +78,46 @@ export default function Relay() {
           </ul>
         </div>
 
-        <div className="relay-gallery-grid">
+        {/* Сетка картинок с жесткими инлайн-стилями */}
+        <div 
+          style={{ 
+            display: 'grid', 
+            gridTemplateColumns: '1fr 1fr', 
+            gridTemplateRows: '220px 220px', 
+            gap: '12px', 
+            width: '100%' 
+          }}
+        >
           {/* Главное фото (ряд ПК) */}
-          <div className="relay-gallery-item relay-gallery-main">
-            <img src="/img/uslug_PC.png" alt="Broadcast PC Row" loading="lazy" />
-            <div className="relay-gallery-overlay"><span>MAIN BROADCAST ARENA</span></div>
+          <div style={{ gridRow: 'span 2', position: 'relative', overflow: 'hidden', borderRadius: '6px', border: '1px solid rgba(167,139,250,.2)' }}>
+            <img src="/img/uslug_PC.png" alt="Broadcast PC Row" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '15px', background: 'linear-gradient(to top, rgba(8,9,13,0.95), transparent)' }}>
+              <span style={{ color: '#fff', fontSize: '10px', fontWeight: 'bold', letterSpacing: '0.1em' }}>MAIN BROADCAST ARENA</span>
+            </div>
           </div>
           
-          {/* Рабочее место (робот-манипулятор) */}
-          <div className="relay-gallery-item">
-            <img src="/img/uslug_live.png" alt="Workstation" loading="lazy" />
-            <div className="relay-gallery-overlay"><span>CONTROL ROOM</span></div>
+          {/* Рабочее место */}
+          <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '6px', border: '1px solid rgba(167,139,250,.2)' }}>
+            <img src="/img/uslug_live.png" alt="Workstation" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '15px', background: 'linear-gradient(to top, rgba(8,9,13,0.95), transparent)' }}>
+              <span style={{ color: '#fff', fontSize: '10px', fontWeight: 'bold', letterSpacing: '0.1em' }}>CONTROL ROOM</span>
+            </div>
           </div>
           
-          {/* Сетап (кресло и монитор) */}
-          <div className="relay-gallery-item">
-            <img src="/img/uslug_boot.png" alt="Gaming Setup" loading="lazy" />
-            <div className="relay-gallery-overlay"><span>PLAYER STATION</span></div>
+          {/* Сетап */}
+          <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '6px', border: '1px solid rgba(167,139,250,.2)' }}>
+            <img src="/img/uslug_boot.png" alt="Gaming Setup" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '15px', background: 'linear-gradient(to top, rgba(8,9,13,0.95), transparent)' }}>
+              <span style={{ color: '#fff', fontSize: '10px', fontWeight: 'bold', letterSpacing: '0.1em' }}>PLAYER STATION</span>
+            </div>
           </div>
-          
+
           {/* Кафе (зона отдыха) */}
-          <div className="relay-gallery-item">
-            <img src="/img/uslug_otdih.png" alt="Lounge Zone" loading="lazy" />
-            <div className="relay-gallery-overlay"><span>RELAX ZONE</span></div>
+          <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '6px', border: '1px solid rgba(167,139,250,.2)' }}>
+            <img src="/img/uslug_otdih.png" alt="Lounge Zone" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '15px', background: 'linear-gradient(to top, rgba(8,9,13,0.95), transparent)' }}>
+              <span style={{ color: '#fff', fontSize: '10px', fontWeight: 'bold', letterSpacing: '0.1em' }}>RELAX ZONE</span>
+            </div>
           </div>
         </div>
       </section>
