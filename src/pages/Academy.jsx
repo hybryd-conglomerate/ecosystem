@@ -5,6 +5,7 @@
 
 
 
+
 import { Link } from 'react-router-dom';
 
 const disciplines = [
@@ -73,48 +74,67 @@ export default function Academy() {
         </div>
       </section>
 
-      {/* --- НОВАЯ СЕКЦИЯ: МЕРЧ АКАДЕМИИ --- */}
+      {/* --- СЕКЦИЯ МЕРЧА АКАДЕМИИ (2 КАРТИНКИ) --- */}
       <section className="section-pad" style={{ background: '#0b0c12' }}>
         <div className="section-kicker">
           <span>04 / TEAM MERCH</span>
           <span>HYBRID ACADEMY / UNIFORM</span>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', alignItems: 'center', marginTop: '40px' }}>
+        <div style={{ marginTop: '40px' }}>
           
-          {/* Картинка куртки */}
-          <div data-reveal style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
-            <img 
-              src="/img/merch-coat.png" // <--- ТЕПЕРЬ .PNG
-              alt="Hybrid Academy Tech Coat" 
-              style={{ 
-                width: '100%', 
-                maxWidth: '600px', 
-                objectFit: 'contain',
-                filter: 'drop-shadow(0 0 30px rgba(167, 139, 250, 0.2))' 
-              }} 
-            />
+          {/* Блок с двумя картинками */}
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '40px' }}>
+            
+            {/* Куртка */}
+            <div data-reveal style={{ display: 'flex', justifyContent: 'center', background: '#08090d', padding: '20px', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <img 
+                src="/img/merch-coat.png" 
+                alt="Hybrid Academy Tech Coat" 
+                style={{ 
+                  width: '100%', 
+                  maxWidth: '500px', 
+                  objectFit: 'contain',
+                  filter: 'drop-shadow(0 0 30px rgba(167, 139, 250, 0.2))' 
+                }} 
+              />
+            </div>
+
+            {/* Футболка */}
+            <div data-reveal style={{ display: 'flex', justifyContent: 'center', background: '#08090d', padding: '20px', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <img 
+                src="/img/merch-tshirt-purple.png" 
+                alt="Hybrid Academy T-Shirt" 
+                style={{ 
+                  width: '100%', 
+                  maxWidth: '500px', 
+                  objectFit: 'contain',
+                  filter: 'drop-shadow(0 0 30px rgba(167, 139, 250, 0.2))' 
+                }} 
+              />
+            </div>
+
           </div>
 
-          {/* Текстовая часть */}
-          <div data-reveal>
+          {/* Текст и кнопка снизу на всю ширину */}
+          <div data-reveal style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
             <h2 style={{ fontSize: 'clamp(2rem, 3vw, 3rem)', marginBottom: '20px' }}>
               ЭКИПИРОВКА <em style={{ color: 'var(--violet)' }}>АКАДЕМИИ.</em>
             </h2>
-            <p style={{ color: 'var(--muted)', fontSize: '15px', lineHeight: '1.8', marginBottom: '25px' }}>
-              Техническая куртка-плащ для киберспортсменов HYBRID ACADEMY. 
-              Разработана с учетом требований к тренировкам и соревнованиям: влагоотталкивающая ткань, светоотражающие элементы и модульная конструкция.
+            <p style={{ color: 'var(--muted)', fontSize: '15px', lineHeight: '1.8', marginBottom: '30px' }}>
+              Официальная форма HYBRID ACADEMY. Техническая куртка-плащ для защиты от непогоды и фиолетовая киберспортивная футболка с принтом. 
+              Разработаны с учетом требований к тренировкам и соревнованиям.
             </p>
             
-            <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 30px 0', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <li style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#d1d5db' }}>
-                <span style={{ color: 'var(--violet)', fontSize: '18px', fontWeight: 'bold' }}>✓</span> Водоотталкивающая мембранная ткань
+            <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 30px 0', display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '20px' }}>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#d1d5db', fontSize: '13px' }}>
+                <span style={{ color: 'var(--violet)', fontSize: '16px', fontWeight: 'bold' }}>✓</span> Водоотталкивающая ткань
               </li>
-              <li style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#d1d5db' }}>
-                <span style={{ color: 'var(--violet)', fontSize: '18px', fontWeight: 'bold' }}>✓</span> Светоотражающие элементы
+              <li style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#d1d5db', fontSize: '13px' }}>
+                <span style={{ color: 'var(--violet)', fontSize: '16px', fontWeight: 'bold' }}>✓</span> Светоотражающие элементы
               </li>
-              <li style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#d1d5db' }}>
-                <span style={{ color: 'var(--violet)', fontSize: '18px', fontWeight: 'bold' }}>✓</span> Съемные рукава и капюшон
+              <li style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#d1d5db', fontSize: '13px' }}>
+                <span style={{ color: 'var(--violet)', fontSize: '16px', fontWeight: 'bold' }}>✓</span> Дышащий материал
               </li>
             </ul>
 
@@ -125,6 +145,7 @@ export default function Academy() {
               Заказать экипировку ↗
             </button>
           </div>
+
         </div>
       </section>
       {/* --- КОНЕЦ СЕКЦИИ МЕРЧА --- */}
