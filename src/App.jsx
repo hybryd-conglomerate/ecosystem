@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 import { Routes, Route, NavLink, Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { nav } from './data.js';
@@ -14,8 +6,9 @@ import { TechList, TechDetail } from './pages/Tech.jsx';
 import { Technologies, Projects, Company, Docs, Cabinet, NotFound } from './pages/Info.jsx';
 import Academy from './pages/Academy.jsx';
 import Aerospace from './pages/Aerospace.jsx';
-import Triathlon from './pages/Triathlon.jsx'; // <--- ДОБАВЛЕН ИМПОРТ
+import Triathlon from './pages/Triathlon.jsx';
 import EsportsDiscipline from './pages/EsportsDiscipline.jsx';
+import Relay from './pages/Relay.jsx';
 
 function MotionSystem() {
   const { pathname } = useLocation();
@@ -51,12 +44,12 @@ function Header() {
 
   if (path.startsWith('/academy')) {
     glowClass = 'glow-purple'; 
-  } else if (path.startsWith('/studio') || path.startsWith('/stream')) {
+  } else if (path.startsWith('/relay') || path.startsWith('/studio') || path.startsWith('/stream')) {
     glowClass = 'glow-red';    
   } else if (path.startsWith('/aerospace') || path.startsWith('/space')) {
     glowClass = 'glow-cyan';   
   } else if (path.startsWith('/triathlon')) {
-    glowClass = 'glow-red';    // <--- ДОБАВЛЕНО УСЛОВИЕ ДЛЯ ТРИАТЛОНА
+    glowClass = 'glow-red';    
   }
 
   return (
@@ -125,20 +118,22 @@ export default function App() {
           <Route path="/tech" element={<TechList />} />
           <Route path="/tech/:slug" element={<TechDetail />} />
           <Route path="/technologies" element={<Technologies />} />
-          <Route
-  path="/academy/:disciplineSlug"
-  element={<EsportsDiscipline />}
-/>
+          
+          {/* Академия и дисциплины */}
+          <Route path="/academy" element={<Academy />} />
+          <Route path="/academy/:disciplineSlug" element={<EsportsDiscipline />} />
+          
+          {/* Студия трансляций HYBRID RELAY */}
+          <Route path="/relay" element={<Relay />} /> {/* <--- ДОБАВЛЕН МАРШРУТ */}
           
           {/* Аэрокосмические линии */}
           <Route path="/aerospace" element={<Aerospace />} />
           
           {/* Триатлон */}
-          <Route path="/triathlon" element={<Triathlon />} /> {/* <--- ДОБАВЛЕН МАРШРУТ */}
+          <Route path="/triathlon" element={<Triathlon />} />
           
           <Route path="/projects" element={<Projects />} />
           <Route path="/company" element={<Company />} />
-          <Route path="/academy" element={<Academy />} />
           <Route path="/docs" element={<Docs />} />
           <Route path="/cabinet" element={<Cabinet />} />
           <Route path="*" element={<NotFound />} />
