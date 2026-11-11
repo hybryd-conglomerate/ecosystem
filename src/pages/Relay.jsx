@@ -5,6 +5,7 @@
 
 
 
+
 import { Link } from 'react-router-dom';
 
 const formats = [
@@ -59,18 +60,63 @@ export default function Relay() {
         </div>
       </section>
 
+      {/* --- ОБНОВЛЕННАЯ СЕКЦИЯ С ГАЛЕРЕЕЙ --- */}
       <section className="relay-studio-section">
-        <div className="relay-studio-visual">
-          <div className="relay-studio-screen">
-            <span>HYBRID RELAY</span>
-            <strong>ON AIR</strong>
-            <i />
-          </div>
-        </div>
         <div className="relay-studio-copy">
           <span className="section-kicker">02 / PRODUCTION ENVIRONMENT</span>
           <h2>ОТ ИГРОВОГО<br /><em>МОМЕНТА.</em><br />ДО ЭФИРА.</h2>
           <p>Производственная среда для создания киберспортивного медиаконтента: подготовка эфиров, работа с игровым сигналом, комментирование, графика, запись и постпродакшн.</p>
+          
+          <ul className="relay-capabilities" style={{ marginTop: '30px' }}>
+            <div>
+              <span>01</span>
+              <strong>Комментаторские кабины с шумоизоляцией</strong>
+              <i>↗</i>
+            </div>
+            <div>
+              <span>02</span>
+              <strong>Игровые станции с захватом сигнала 4K</strong>
+              <i>↗</i>
+            </div>
+            <div>
+              <span>03</span>
+              <strong>Зона отдыха и лаунж для команд</strong>
+              <i>↗</i>
+            </div>
+          </ul>
+        </div>
+
+        {/* СЕТКА КАРТИНОК (.PNG) */}
+        <div className="relay-gallery-grid">
+          {/* Главное фото (занимает 2 строки) */}
+          <div className="relay-gallery-item relay-gallery-main">
+            <img src="/img/relay-pc-row.png" alt="Broadcast PC Row" loading="lazy" />
+            <div className="relay-gallery-overlay">
+              <span>MAIN BROADCAST ARENA</span>
+            </div>
+          </div>
+          
+          {/* Фото поменьше */}
+          <div className="relay-gallery-item">
+            <img src="/img/relay-workstation.png" alt="Workstation" loading="lazy" />
+            <div className="relay-gallery-overlay">
+              <span>CONTROL ROOM</span>
+            </div>
+          </div>
+          
+          <div className="relay-gallery-item">
+            <img src="/img/relay-setup.png" alt="Gaming Setup" loading="lazy" />
+            <div className="relay-gallery-overlay">
+              <span>PLAYER STATION</span>
+            </div>
+          </div>
+          
+          <div className="relay-gallery-item">
+            <img src="/img/relay-lounge.png" alt="Lounge Zone" loading="lazy" />
+            <div className="relay-gallery-overlay">
+              <span>RELAX ZONE</span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -87,7 +133,7 @@ export default function Relay() {
         </div>
       </section>
 
-      {/* --- НОВАЯ СЕКЦИЯ: МЕРЧ С ФУТБОЛКОЙ --- */}
+      {/* --- СЕКЦИЯ МЕРЧА (ФУТБОЛКА) --- */}
       <section className="section-pad relay-section" style={{ background: '#0b0c12' }}>
         <div className="section-kicker">
           <span>04 / TEAM MERCH</span>
@@ -95,21 +141,22 @@ export default function Relay() {
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', alignItems: 'center', marginTop: '40px' }}>
-          {/* Картинка футболки */}
+          
+          {/* Левая часть: Картинка футболки */}
           <div data-reveal style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
             <img 
-              src="/img/merch-tshirt.png" 
+              src="/img/merch-tshirt-red.png" // <--- Убедитесь, что файл так называется
               alt="Hybrid Relay Jersey" 
               style={{ 
                 width: '100%', 
                 maxWidth: '500px', 
                 objectFit: 'contain',
-                filter: 'drop-shadow(0 0 40px rgba(255, 42, 42, 0.2))' 
+                filter: 'drop-shadow(0 0 40px rgba(255, 42, 42, 0.3))' 
               }} 
             />
           </div>
 
-          {/* Текстовая часть */}
+          {/* Правая часть: Описание */}
           <div data-reveal>
             <h2 style={{ fontSize: 'clamp(2rem, 3vw, 3rem)', marginBottom: '20px' }}>
               ОФИЦИАЛЬНЫЙ <em style={{ color: '#ff2a2a' }}>МЕРЧ.</em>
@@ -121,13 +168,13 @@ export default function Relay() {
             
             <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 30px 0', display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <li style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#d1d5db' }}>
-                <span style={{ color: '#ff2a2a', fontSize: '18px' }}>✓</span> Дышащая ткань премиум-класса
+                <span style={{ color: '#ff2a2a', fontSize: '18px', fontWeight: 'bold' }}>✓</span> Дышащая ткань премиум-класса
               </li>
               <li style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#d1d5db' }}>
-                <span style={{ color: '#ff2a2a', fontSize: '18px' }}>✓</span> Светоотражающие элементы
+                <span style={{ color: '#ff2a2a', fontSize: '18px', fontWeight: 'bold' }}>✓</span> Светоотражающие элементы
               </li>
               <li style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#d1d5db' }}>
-                <span style={{ color: '#ff2a2a', fontSize: '18px' }}>✓</span> Ограниченная серия для участников
+                <span style={{ color: '#ff2a2a', fontSize: '18px', fontWeight: 'bold' }}>✓</span> Ограниченная серия для участников
               </li>
             </ul>
 
