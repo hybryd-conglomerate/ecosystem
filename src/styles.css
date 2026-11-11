@@ -301,3 +301,548 @@ em { color: var(--violet); font-style: normal; }
   *,*::before,*::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   [data-reveal] { opacity: 1; transform: none; }
 }
+
+
+/* =========================================
+   HYBRID ESPORTS — DISCIPLINE PAGES
+========================================= */
+
+.discipline-card {
+  display: flex;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,.07);
+  transition: border .3s, transform .3s;
+}
+
+.discipline-card:hover {
+  border-color: rgba(167,139,250,.55);
+}
+
+.discipline-arrow {
+  position: absolute;
+  z-index: 2;
+  right: 20px;
+  bottom: 19px;
+  color: var(--violet);
+  font-size: 20px;
+  font-style: normal;
+  opacity: 0;
+  transform: translate(-5px, 5px);
+  transition: .3s;
+}
+
+.discipline-card:hover .discipline-arrow {
+  opacity: 1;
+  transform: translate(0);
+}
+
+.esport-page {
+  background: var(--bg);
+}
+
+.esport-hero {
+  min-height: 620px;
+  position: relative;
+  display: flex;
+  align-items: end;
+  padding: 90px 9vw;
+  overflow: hidden;
+  background: #090a10;
+}
+
+.esport-hero-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center 30%;
+  opacity: .45;
+  filter: saturate(.65);
+  transform: scale(1.02);
+}
+
+.esport-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg,rgba(7,8,12,.98),rgba(7,8,12,.55) 70%,rgba(7,8,12,.3)),
+    linear-gradient(0deg,#08090d,transparent 75%);
+}
+
+.esport-hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.esport-back {
+  display: inline-block;
+  margin-bottom: 65px;
+  color: var(--violet);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+
+.esport-hero h1 {
+  margin: 32px 0 24px;
+  font-size: clamp(3rem,8vw,7rem);
+}
+
+.esport-hero-content > p {
+  max-width: 550px;
+  color: #b4b5c0;
+  line-height: 1.8;
+}
+
+.esport-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  color: #a5a6b1;
+  font-size: 9px;
+  letter-spacing: .16em;
+}
+
+.esport-status i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--violet);
+  box-shadow: 0 0 12px var(--violet);
+}
+
+.esport-section {
+  border-bottom: 1px solid rgba(255,255,255,.04);
+}
+
+.esport-roster {
+  display: grid;
+  grid-template-columns: repeat(5,minmax(0,1fr));
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.esport-player {
+  min-width: 0;
+  padding: 20px;
+  background: #101218;
+  border: 1px solid var(--line);
+}
+
+.esport-player > span {
+  color: var(--violet);
+  font-size: 9px;
+}
+
+.esport-player-avatar {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  margin: 18px 0;
+  color: var(--violet-bright);
+  background: radial-gradient(circle,#292039,#101218 70%);
+  border: 1px solid rgba(167,139,250,.2);
+  font: 500 30px 'Unbounded',sans-serif;
+}
+
+.esport-player strong,
+.esport-player small {
+  display: block;
+}
+
+.esport-player strong {
+  font-size: 11px;
+}
+
+.esport-player small {
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 8px;
+  letter-spacing: .12em;
+}
+
+.esport-upload-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.esport-upload {
+  min-height: 190px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 12px;
+  background: #101218;
+  border: 1px dashed rgba(167,139,250,.38);
+  cursor: pointer;
+  transition: .3s;
+}
+
+.esport-upload:hover {
+  background: #151521;
+  border-color: var(--violet-bright);
+  transform: translateY(-3px);
+}
+
+.esport-upload input {
+  display: none;
+}
+
+.upload-icon {
+  color: var(--violet);
+  font-size: 30px;
+}
+
+.esport-upload strong {
+  font-size: 14px;
+}
+
+.esport-upload small {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.esport-media-list,
+.esport-snapshots,
+.esport-match-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.esport-empty {
+  padding: 30px;
+  background: #0d0f15;
+  border: 1px solid rgba(255,255,255,.06);
+}
+
+.esport-empty > span {
+  color: var(--violet);
+  font-size: 9px;
+  letter-spacing: .15em;
+}
+
+.esport-empty p {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.esport-media-item {
+  display: grid;
+  grid-template-columns: 110px minmax(0,1fr) auto;
+  gap: 20px;
+  align-items: center;
+  padding: 14px;
+  background: #101218;
+  border: 1px solid var(--line);
+}
+
+.esport-media-preview {
+  height: 76px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: var(--violet);
+  background: #08090d;
+}
+
+.esport-media-preview img,
+.esport-media-preview video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.esport-media-info {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.esport-media-info strong {
+  overflow-wrap: anywhere;
+  font-size: 12px;
+}
+
+.esport-media-info small {
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.esport-media-info a {
+  color: var(--violet-bright);
+  font-size: 10px;
+}
+
+.esport-remove {
+  padding: 10px;
+  color: #a6a7b1;
+  background: transparent;
+  border: 1px solid var(--line);
+  cursor: pointer;
+  font-size: 8px;
+  letter-spacing: .1em;
+}
+
+.esport-remove:hover {
+  color: #ff8585;
+  border-color: #ff8585;
+}
+
+.esport-stat-form,
+.esport-match-form {
+  margin-top: 45px;
+  padding: clamp(22px,4vw,42px);
+  background: #101218;
+  border: 1px solid var(--line);
+}
+
+.esport-form-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 30px;
+  margin-bottom: 35px;
+}
+
+.esport-form-top h2,
+.esport-match-form h2 {
+  margin: 0 0 15px;
+  font-size: clamp(27px,4vw,48px);
+}
+
+.esport-form-top p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.esport-metric-inputs {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.esport-field {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.esport-field > span {
+  color: #a9a9b7;
+  font-size: 9px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.esport-field input,
+.esport-field select {
+  width: 100%;
+  min-width: 0;
+  height: 45px;
+  padding: 0 13px;
+  color: var(--white);
+  background: #08090d;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  outline: none;
+  font: inherit;
+  font-size: 12px;
+}
+
+.esport-field input:focus,
+.esport-field select:focus {
+  border-color: var(--violet);
+  box-shadow: 0 0 0 2px rgba(167,139,250,.08);
+}
+
+.esport-field select option {
+  background: #101218;
+}
+
+.esport-snapshot {
+  padding: 24px;
+  background: #101218;
+  border: 1px solid var(--line);
+}
+
+.esport-snapshot-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.esport-snapshot-heading strong {
+  font-size: 12px;
+}
+
+.esport-snapshot-heading small {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.esport-metric-values {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 14px;
+}
+
+.esport-metric-values > div {
+  padding: 14px;
+  background: #08090d;
+}
+
+.esport-metric-values small,
+.esport-metric-values strong {
+  display: block;
+}
+
+.esport-metric-values small {
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.esport-metric-values strong {
+  margin-top: 9px;
+  color: var(--violet-bright);
+  font-size: 18px;
+}
+
+.esport-match-form h2 {
+  margin-bottom: 30px;
+}
+
+.esport-match-fields {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.esport-match {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 22px;
+  background: #101218;
+  border: 1px solid var(--line);
+}
+
+.esport-match > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.esport-match small {
+  color: var(--violet);
+  font-size: 9px;
+}
+
+.esport-match strong {
+  font-size: 13px;
+}
+
+.esport-match span {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.esport-match > b {
+  color: var(--violet-bright);
+  font: 500 22px 'Unbounded',sans-serif;
+  white-space: nowrap;
+}
+
+.esport-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 30px 9vw;
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: .13em;
+}
+
+.esport-bottom a {
+  color: var(--violet-bright);
+}
+
+@media (max-width: 800px) {
+  .esport-roster {
+    grid-template-columns: repeat(3,minmax(0,1fr));
+  }
+
+  .esport-metric-inputs,
+  .esport-metric-values {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+
+  .esport-match-fields {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+
+  .esport-hero {
+    min-height: 540px;
+    padding: 80px 7vw;
+  }
+}
+
+@media (max-width: 520px) {
+  .esport-roster {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+
+  .esport-upload-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .esport-form-top {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .esport-metric-inputs,
+  .esport-metric-values,
+  .esport-match-fields {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .esport-media-item {
+    grid-template-columns: 76px minmax(0,1fr);
+  }
+
+  .esport-media-preview {
+    height: 65px;
+  }
+
+  .esport-remove {
+    grid-column: 1/-1;
+  }
+
+  .esport-bottom {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .discipline-card,
+  .esport-upload,
+  .discipline-arrow {
+    transition: none;
+  }
+}
+
