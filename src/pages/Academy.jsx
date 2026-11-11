@@ -6,6 +6,10 @@
 
 
 
+
+
+
+
 import { Link } from 'react-router-dom';
 
 const disciplines = [
@@ -74,7 +78,7 @@ export default function Academy() {
         </div>
       </section>
 
-      {/* --- СЕКЦИЯ МЕРЧА АКАДЕМИИ (2 КАРТИНКИ) --- */}
+      {/* --- СЕКЦИЯ МЕРЧА АКАДЕМИИ --- */}
       <section className="section-pad" style={{ background: '#0b0c12' }}>
         <div className="section-kicker">
           <span>04 / TEAM MERCH</span>
@@ -117,7 +121,7 @@ export default function Academy() {
           </div>
 
           {/* Текст и кнопка снизу на всю ширину */}
-          <div data-reveal style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
+          <div data-reveal style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 60px auto' }}>
             <h2 style={{ fontSize: 'clamp(2rem, 3vw, 3rem)', marginBottom: '20px' }}>
               ЭКИПИРОВКА <em style={{ color: 'var(--violet)' }}>АКАДЕМИИ.</em>
             </h2>
@@ -144,6 +148,24 @@ export default function Academy() {
             >
               Заказать экипировку ↗
             </button>
+          </div>
+
+          {/* БЛОК: ЛУКБУК */}
+          <div data-reveal style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <div className="section-kicker" style={{ width: '100%', marginBottom: '20px' }}>
+              <span>OFFICIAL LOOKBOOK</span>
+              <span>SEASON 2026</span>
+            </div>
+            <img 
+              src="/img/merch-lookbook.png" 
+              alt="Hybrid Academy Lookbook" 
+              style={{ 
+                width: '100%', 
+                height: 'auto', 
+                borderRadius: '8px',
+                border: '1px solid rgba(255,255,255,0.1)'
+              }} 
+            />
           </div>
 
         </div>
